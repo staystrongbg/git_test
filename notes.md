@@ -4,67 +4,67 @@
 
 ## callback fn - fn prosledjena kao argument i izvrsena unutar funkcije
 
-function morning(name) {
-return `Good morning ${name.toUpperCase()}`
-} //callback fn - do not invoke
+    function morning(name) {
+    return `Good morning ${name.toUpperCase()}`
+    } //callback fn - do not invoke
 
-'function greet(name, cb) {
-const myName = 'Zoran'
-console.log(`${cb(name)}, moje ime je ${myName}`)
-} //higher order fn - invoke with cb fn
-greet('Dragan', morning)
-greet('Marko', morning)
-greet('Maksa', morning)'
+    function greet(name, cb) {
+    const myName = 'Zoran'
+    console.log(`${cb(name)}, moje ime je ${myName}`)
+    } //higher order fn - invoke with cb fn
+    greet('Dragan', morning)
+    greet('Marko', morning)
+    greet('Maksa', morning)
 
 ## forEach
 
 - does not return new array
 
-const people = [
-{ name: 'zoran', position: 'developer', age: 35 },
-{ name: 'Aca', position: 'fullstack', age: 35 },
-{ name: 'maksa', position: 'system admin', age: 35 },
-]
+    const people = [
+    { name: 'zoran', position: 'developer', age: 35 },
+    { name: 'Aca', position: 'fullstack', age: 35 },
+    { name: 'maksa', position: 'system admin', age: 35 },
+    ]
 
 1. showPerson = (person) => console.log(person.position.toUpperCase()) //callback fn za forEach
    people.forEach(showPerson) //higher order fn uzima kao argument showPerson fn
 
 2. //ovo je drugi nacin ispisivanja a isto rade - ovo se zove anon fn
 
-   people.forEach(function (item) {
-   console.log(item.position.toUpperCase())
-   })
+     people.forEach(function (item) {
+     console.log(item.position.toUpperCase())
+     })
 
-- people.forEach((item) => console.log(item.position.toUpperCase())) //arrow fn
+    people.forEach((item) => console.log(item.position.toUpperCase())) //arrow fn
 
 ## map
 
 - doesNOT return a new array
 
-//opet je tu cb fn naravno
-const ages = people.map(function (person) {
-console.log(person)
-})
+    //opet je tu cb fn naravno
+    const ages = people.map(function (person) {
+    console.log(person)
+    })
 
-//arrow fn
-const ages = people.map((person) => console.log(person))
+    //arrow fn
+    const ages = people.map((person) => console.log(person))
 
-//map moze i da returnuje sta hoces...npr objekat
+    //map moze i da returnuje sta hoces...npr objekat
 
-const newPeople = people.map(function (person) {
-return {
-ime: person.name,
-oldAge: person.age,
-}
-})
+    const newPeople = people.map(function (person) {
+    return {
+    ime: person.name,
+    oldAge: person.age,
+    }
+    })
 
 ## upis u DOM
 
-const names = people.map(function (person) {
-return `<h1>${person.name}</h1> <h3>${person.position}</h3>`
-})
+    const names = people.map(function (person) {
+    return `<h1>${person.name}</h1> <h3>${person.position}</h3>`
+    })
 
-document.body.innerHTML = names.join('')
+    document.body.innerHTML = names.join('')
 
 ## FILTER
 
@@ -119,16 +119,16 @@ document.body.innerHTML = names.join('')
 
 const voce = document.querySelector('#voce')
 
-console.log(voce.children)
-console.log(voce.firstChild)
-console.log(voce.lastChild)
+    console.log(voce.children)
+    console.log(voce.firstChild)
+    console.log(voce.lastChild)
 
-console.log(voce.parentElement.parentElement.parentElement)
+    console.log(voce.parentElement.parentElement.parentElement)
 
-console.log(voce.nextSibling) //can be white space
-console.log(voce.previousSibling) //can be white space
-console.log(voce.nextElementSibling) //can be only html element
-console.log(voce.previousElementSibling) //can be only html element
+    console.log(voce.nextSibling) //can be white space
+    console.log(voce.previousSibling) //can be white space
+    console.log(voce.nextElementSibling) //can be only html element
+    console.log(voce.previousElementSibling) //can be only html element
 
 ### set text & get text
 
@@ -182,7 +182,7 @@ const values = JSON.parse(localStorage.getItem('voce'))
 
 ### uslovno iscitavanje iz localStorage i skladistenje u varijablu
 
-let local;
-localStorage.getItem('voce')
-? (local = JSON.parse(localStorage.getItem('voce')))
-: (local = [])
+    let local;
+    localStorage.getItem('voce')
+    ? (local = JSON.parse(localStorage.getItem('voce')))
+    : (local = [])
