@@ -26,14 +26,14 @@
     { name: 'maksa', position: 'system admin', age: 35 },
     ]
 
-1. showPerson = (person) => console.log(person.position.toUpperCase()) //callback fn za forEach
-   people.forEach(showPerson) //higher order fn uzima kao argument showPerson fn
+1.  showPerson = (person) => console.log(person.position.toUpperCase()) //callback fn za forEach
+    people.forEach(showPerson) //higher order fn uzima kao argument showPerson fn
 
-2. //ovo je drugi nacin ispisivanja a isto rade - ovo se zove anon fn
+2.  //ovo je drugi nacin ispisivanja a isto rade - ovo se zove anon fn
 
-     people.forEach(function (item) {
-     console.log(item.position.toUpperCase())
-     })
+    people.forEach(function (item) {
+    console.log(item.position.toUpperCase())
+    })
 
     people.forEach((item) => console.log(item.position.toUpperCase())) //arrow fn
 
@@ -72,12 +72,12 @@
 - returns based on condition
 
 - sintaksa
-  //odlskul fn metoda
-  const developer = people.filter(function (person) {
-  return person.position === 'developer'
-  })
-  //es6 arrow fn metoda
-  const developer = people.filter((person) => person.position === 'developer')
+    //odlskul fn metoda
+    const developer = people.filter(function (person) {
+    return person.position === 'developer'
+    })
+    //es6 arrow fn metoda
+    const developer = people.filter((person) => person.position === 'developer')
 
 ## FIND
 
@@ -86,12 +86,12 @@
 - great for getting unique values(eg. IDs or any single prop)
 
 - sintaksa
-  //odlskul fn metoda
-  const name = names.find(function (name) {
-  return name === 'maksa'
-  })
-  //es 6 arrow fn
-  const name = names.find((name => name.name ==='maksa')
+    //odlskul fn metoda
+    const name = names.find(function (name) {
+    return name === 'maksa'
+    })
+    //es 6 arrow fn
+    const name = names.find((name => name.name ==='maksa')
 
 ## REDUCE
 
@@ -102,12 +102,12 @@
 - return je uvek acc (return acc)
 
 - sintaksa
-  const total = people.reduce(function (acc, currItem) {
-  console.log(`total ${acc}`)
-  console.log(`${currItem.name.toUpperCase()}'s salary : ${currItem.salary}`)
-  acc += currItem.salary
-  return acc
-  }, 0)
+    const total = people.reduce(function (acc, currItem) {
+    console.log(`total ${acc}`)
+    console.log(`${currItem.name.toUpperCase()}'s salary : ${currItem.salary}`)
+    acc += currItem.salary
+    return acc
+    }, 0)
 
 ## DOM
 
@@ -117,7 +117,7 @@
 
 ### childrens & parents & siblings
 
-const voce = document.querySelector('#voce')
+    const voce = document.querySelector('#voce')
 
     console.log(voce.children)
     console.log(voce.firstChild)
@@ -132,14 +132,14 @@ const voce = document.querySelector('#voce')
 
 ### set text & get text
 
-console.log(document.querySelector('#heading-one').textContent)
+    console.log(document.querySelector('#heading-one').textContent)
 
 ## classes and styles dinamically assign
 
-- voceHeading.className = 'heading colors' -overriding previous class
-- voce.classList.add='colors' - not overriding prev values
-- voce.classList.remove='colors' - removig class
-- voce.classList.contains='colors' - ccheck for values
+    voceHeading.className = 'heading colors' -overriding previous class
+    voce.classList.add='colors' - not overriding prev values
+    voce.classList.remove='colors' - removig class
+    voce.classList.contains='colors' - ccheck for values
 
 ## element.insertBefore([what-is-inserting],[before-what])
 
@@ -174,11 +174,11 @@ console.log(document.querySelector('#heading-one').textContent)
 
 ### upis u local storage > setItem()/json.stringify()
 
-localStorage.setItem('voce', JSON.stringify(voce))
+    localStorage.setItem('voce', JSON.stringify(voce))
 
 ### iscitavanje iz local storage > getItem()/ json.parse()
 
-const values = JSON.parse(localStorage.getItem('voce'))
+    const values = JSON.parse(localStorage.getItem('voce'))
 
 ### uslovno iscitavanje iz localStorage i skladistenje u varijablu
 
