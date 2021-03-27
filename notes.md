@@ -8,13 +8,13 @@ function morning(name) {
 return `Good morning ${name.toUpperCase()}`
 } //callback fn - do not invoke
 
-function greet(name, cb) {
+'function greet(name, cb) {
 const myName = 'Zoran'
 console.log(`${cb(name)}, moje ime je ${myName}`)
 } //higher order fn - invoke with cb fn
 greet('Dragan', morning)
 greet('Marko', morning)
-greet('Maksa', morning)
+greet('Maksa', morning)'
 
 ## forEach
 
